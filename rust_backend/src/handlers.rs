@@ -24,8 +24,8 @@ pub async fn create_item(
                 id: Some(record.id),
                 name: record.name,
                 description: record.description,
-                created_at: Some(record.created_at),
-                updated_at: Some(record.updated_at),
+                created_at: record.created_at,
+                updated_at: record.updated_at,
             };
             HttpResponse::Created().json(item)
         }
@@ -52,8 +52,8 @@ pub async fn get_items(pool: web::Data<PgPool>) -> impl Responder {
                     id: Some(record.id),
                     name: record.name,
                     description: record.description,
-                    created_at: Some(record.created_at),
-                    updated_at: Some(record.updated_at),
+                    created_at: record.created_at,
+                    updated_at: record.updated_at,
                 })
                 .collect();
             HttpResponse::Ok().json(items)
@@ -83,8 +83,8 @@ pub async fn get_item(
                 id: Some(record.id),
                 name: record.name,
                 description: record.description,
-                created_at: Some(record.created_at),
-                updated_at: Some(record.updated_at),
+                created_at: record.created_at,
+                updated_at: record.updated_at,
             };
             HttpResponse::Ok().json(item)
         }
@@ -119,8 +119,8 @@ pub async fn update_item(
                 id: Some(record.id),
                 name: record.name,
                 description: record.description,
-                created_at: Some(record.created_at),
-                updated_at: Some(record.updated_at),
+                created_at: record.created_at,
+                updated_at: record.updated_at,
             };
             HttpResponse::Ok().json(item)
         }
